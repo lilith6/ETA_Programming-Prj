@@ -9,12 +9,13 @@ namespace ETA_Programmimg_Prj
     {
         static void Main(string[] args)
         {
+            Person person1 = new Person();
             ///Session 5 
             ///
             //Session5.MetodaTest();
             ///Practice 1 && 5
             ///
-            //Person person1 = new Person();
+
             //person1.GetPersonData();
             //Console.WriteLine(person1.ToString());
 
@@ -23,13 +24,27 @@ namespace ETA_Programmimg_Prj
             //person1.IsOld();
             //person1.ShowGender();
 
-            ///Practice 7-part1
+            ///Session 7-part1
             ///
             //ForStatements.PrintNumbers();
 
-            ///Practice 7-part2
+            ///Session 7-part2
             ///
-            WhileStatements.whileLoopMethod();
+            //WhileStatements.whileLoopMethod();
+
+            ///Practice 7-part1
+            ///
+            person1.AddSkill("Cooking");
+            person1.AddSkill("Gardening");
+            person1.AddSkill("Ninja");
+            person1.AddSkill("Dancing");
+            person1.AddSkill("Cia");
+            person1.AddSkill("Writting");
+
+            person1.PrintSkills();
+
+
+
 
 
 

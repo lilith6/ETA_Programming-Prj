@@ -9,17 +9,20 @@ namespace ETA_Programming_Prj
     internal class Person
     {
         public string firstName { get; set; }
-        public string lastName { get; set; }
-        public int age { get; set; }
-        public string gender { get; set; }
-
+        private string lastName { get; set; }
+        private int age { get; set; }
+        private string gender { get; set; }
         public int addYears { get; set; }
+
+        private List<string> skills { get; set; }
+
 
         public Person() {
             firstName = "";
             lastName = "";
             age = 0;
             gender = "unknown";
+            skills = new List<string>();
         } 
 
         public int calculateFutureUserAge(int plusYears)
@@ -90,6 +93,32 @@ namespace ETA_Programming_Prj
             return ($"Your details are as follows:\n\t- First Name: {firstName}\n\t" +
                 $"- Last Name: {lastName}\n\t- Gender: {gender}\n" +
                 $"You will be {calculateFutureUserAge(addYears)} years old in {addYears} years!");
+        }
+
+
+        public void AddSkill(string skill)
+        {
+            skills.Add(skill);
+            Console.WriteLine($"Added a new skill: {skill}");
+        }
+
+        public void PrintSkills()
+        {
+            Console.WriteLine("The person has the following skills:\n");
+            //Console.WriteLine(String.Join("; ", skills));
+            for (int i = 0; i < skills.Count; i++)
+            { 
+                if (skills[i].ToLower() == "ninja") continue;
+
+                if (skills[i].ToLower() == "cia")
+                {
+                    Console.WriteLine("Classified information, no further skills are displayed!");
+                    break; 
+                }
+
+                Console.WriteLine(skills[i]);
+
+            }
         }
 
     }
