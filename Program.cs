@@ -34,14 +34,20 @@ namespace ETA_Programmimg_Prj
 
             ///Practice 7-part1
             ///
-            person1.AddSkill("Cooking");
-            person1.AddSkill("Gardening");
-            person1.AddSkill("Ninja");
-            person1.AddSkill("Dancing");
-            person1.AddSkill("Cia");
-            person1.AddSkill("Writting");
+            //person1.AddSkill("Cooking");
+            //person1.AddSkill("Gardening");
+            //person1.AddSkill("Ninja");
+            //person1.AddSkill("Dancing");
+            //person1.AddSkill("Cia");
+            //person1.AddSkill("Writting");
 
-            person1.PrintSkills();
+            //person1.PrintSkills();
+
+            ///Practice 7-part2
+            ///
+
+            person1.CountTo(110);
+
 
 
 

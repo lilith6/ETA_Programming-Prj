@@ -17,13 +17,14 @@ namespace ETA_Programming_Prj
         private List<string> skills { get; set; }
 
 
-        public Person() {
+        public Person()
+        {
             firstName = "";
             lastName = "";
             age = 0;
             gender = "unknown";
             skills = new List<string>();
-        } 
+        }
 
         public int calculateFutureUserAge(int plusYears)
         {
@@ -47,6 +48,14 @@ namespace ETA_Programming_Prj
             Console.Write("Enter number of years in the future ");
             addYears = int.Parse(Console.ReadLine());
         }
+
+        public override string ToString()
+        {
+            return ($"Your details are as follows:\n\t- First Name: {firstName}\n\t" +
+                $"- Last Name: {lastName}\n\t- Gender: {gender}\n" +
+                $"You will be {calculateFutureUserAge(addYears)} years old in {addYears} years!");
+        }
+
 
         public void IsOld()
         {
@@ -80,21 +89,17 @@ namespace ETA_Programming_Prj
         {
             switch (gender.ToLower())
             {
-                case "male": Console.WriteLine("You are a male");
+                case "male":
+                    Console.WriteLine("You are a male");
                     break;
-                case "female": Console.WriteLine("You are a female");
+                case "female":
+                    Console.WriteLine("You are a female");
                     break;
-                default: Console.WriteLine("You haven't specified your gender!");
+                default:
+                    Console.WriteLine("You haven't specified your gender!");
                     break;
             }
         }
-        public override string ToString()
-        {
-            return ($"Your details are as follows:\n\t- First Name: {firstName}\n\t" +
-                $"- Last Name: {lastName}\n\t- Gender: {gender}\n" +
-                $"You will be {calculateFutureUserAge(addYears)} years old in {addYears} years!");
-        }
-
 
         public void AddSkill(string skill)
         {
@@ -107,17 +112,43 @@ namespace ETA_Programming_Prj
             Console.WriteLine("The person has the following skills:\n");
             //Console.WriteLine(String.Join("; ", skills));
             for (int i = 0; i < skills.Count; i++)
-            { 
+            {
                 if (skills[i].ToLower() == "ninja") continue;
 
                 if (skills[i].ToLower() == "cia")
                 {
                     Console.WriteLine("Classified information, no further skills are displayed!");
-                    break; 
+                    break;
                 }
 
                 Console.WriteLine(skills[i]);
 
+            }
+        }
+
+        public void CountTo(int limit = 100)
+        {
+            int n = 1;
+
+            Console.WriteLine("Counting from 1 to " + limit);
+
+            while (n <= limit)
+            {
+                if (n == 10)
+                {
+                    Console.Write("Number skipped! ");
+                }
+                else if (n == 99)
+                {
+                    Console.WriteLine("Cannot count past 99!");
+                    break;
+                }
+                else
+                {
+                    Console.Write(n + "; ");
+                }
+
+                n++;
             }
         }
 
